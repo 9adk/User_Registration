@@ -12,9 +12,11 @@ public class Registration {
 		String firstName = sc.nextLine();
 		System.out.println("Enter the last name");
 		String lastName = sc.nextLine();
-		
+		System.out.println("Enter the Email Id");
+		String Email = sc.nextLine();
 		System.out.println(firstName + " is " +user.validateInput(firstName)); //Validating firstName
 		System.out.println(lastName + " is " +user.validateInput(lastName)); //Validating lastName
+		System.out.println(Email + " is " +user.validateEmail(Email));
 		sc.close();
 	}
 	private String validateInput(String name) {
@@ -26,4 +28,14 @@ public class Registration {
 		}
 		return "invalid";
 	}
+	private String validateEmail(String Email) {
+		String expression = "(abc[.][A-Za-z]+@bl[.]co[.][A-Za-z]{2,})$"; // Pattern for Names
+		Pattern pattern = Pattern.compile(expression);
+		Matcher match = pattern.matcher(Email);
+		if(match.find()) {
+			return "valid";
+		}
+		return "invalid";
+	}
+	
 }
