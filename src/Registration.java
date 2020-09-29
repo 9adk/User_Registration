@@ -29,7 +29,7 @@ public class Registration {
 		return "invalid";
 	}
 	private String validateEmail(String Email) {
-		String expression = "(abc[.][A-Za-z]+@bl[.]co[.][A-Za-z]{2,})$"; // Pattern for Names
+		String expression = "(abc[.][A-Za-z]+@bl[.]co[.][A-Za-z]{2,})$"; // Pattern for Email
 		Pattern pattern = Pattern.compile(expression);
 		Matcher match = pattern.matcher(Email);
 		if(match.find()) {
@@ -37,5 +37,7 @@ public class Registration {
 		}
 		return "invalid";
 	}
+	
+	
 	
 }
