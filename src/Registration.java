@@ -16,11 +16,14 @@ public class Registration {
 		String Email = sc.nextLine();
 		System.out.println("Enter the Phone Number");
 		String Phone = sc.nextLine();
+		System.out.println("Enter the Password");
+		String Password = sc.nextLine();
 		
 		System.out.println(firstName + " is " +user.validateInput(firstName)); //Validating firstName
 		System.out.println(lastName + " is " +user.validateInput(lastName)); //Validating lastName
 		System.out.println(Email + " is " +user.validateEmail(Email));	// Validating Email
 		System.out.println(Phone+ " is " +user.validateNumber(Phone));	// Validating Number
+		System.out.println(Password+ " is " +user.validatePassword(Password));
 		
 		sc.close();
 	}
@@ -52,7 +55,16 @@ public class Registration {
 		return "invalid";
 		
 	}
-	
+	private String validatePassword(String pass) {
+		String expression = "[A-Za-z0-9]{8,}";	//Pattern for Password
+		Pattern pattern = Pattern.compile(expression);
+		Matcher match = pattern.matcher(pass);
+		if(match.find()) {
+			return "valid";
+		}
+		return "invalid";
+		
+	}
 	
 	
 	
