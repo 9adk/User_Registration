@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 public class Registration {
 	
 	public boolean validateInput(String name) {
-		String expression = "(^[A-Z]{1})[a-z]{2,}$"; // Pattern for Names
+		String expression = "(^[A-Z]{1})[a-z]{2,}$"; // Pattern for Name
 		Pattern pattern = Pattern.compile(expression);
 		Matcher match = pattern.matcher(name);
 		if(match.find()) {
@@ -13,7 +13,7 @@ public class Registration {
 		return false;
 	}
 	public boolean validateEmail(String Email) {		
-		String expression = "^[a-z]+[.|+_-]?[a-z0-9]+[@][a-z0-9]{1,}[.][a-z]{2,}[.]{0,1}[a-z]*$"; // Pattern
+		String expression = "^[a-zA-Z0-9_]+[-+.]?[A-Za-z0-9_]+@[A-Za-z0-9]+[.][a-z]{2,}[.]?([a-z]{2,})?$"; // Pattern for Email
 		Pattern pattern = Pattern.compile(expression);
 		Matcher match = pattern.matcher(Email);
 		if(match.find()) {
