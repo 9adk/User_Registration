@@ -32,4 +32,40 @@ class UserRegistrationTest {
 		reg.validatePassword("poiuytr");
 		});
 	}	
+	@Test
+	public void givenValidName_shouldReturnValid() {
+	    try {
+	    	assertEquals("valid",reg.validateInput("Aditya"));
+	    }
+	    catch(RegistrationException e) {
+	    	System.out.println(e);
+	    }
+	}
+	@Test
+	public void givenValidPassword_shouldReturnValid() {
+	    try {
+	    	assertEquals("valid",reg.validatePassword("Aditya@123"));
+	    }
+	    catch(RegistrationException e) {
+	    	System.out.println(e);
+	    }
+	}
+	@Test
+	public void givenValidNumber_shouldReturnValid() {
+	    try {
+	    	assertEquals("valid",reg.validateNumber("91 7887483853"));
+	    }
+	    catch(RegistrationException e) {
+	    	System.out.println(e);
+	    }
+	}
+	@Test
+	public void givenValidEmail_shouldReturnValid() {
+	    try {
+	    	assertEquals("valid",reg.validateInput("abc@gmail.com"));
+	    }
+	    catch(RegistrationException e) {
+	    	System.out.println(e);
+	    }
+	}
 }
