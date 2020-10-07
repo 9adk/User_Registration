@@ -60,5 +60,14 @@ public class Registration {
 		}
 		return result;		
 		
-	}	
+	}
+	ValidateInput validateInput = (String input, String regex)->{
+		Pattern pattern = Pattern.compile(regex);
+		Matcher match = pattern.matcher(input);
+		if(match.find()) {
+			return true;
+		}
+		else
+			return false;
+	};	
 }

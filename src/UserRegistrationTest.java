@@ -68,4 +68,9 @@ class UserRegistrationTest {
 	    	System.out.println(e);
 	    }
 	}
+	//Implemented lambda expression
+	@Test
+	public void givenInvalidInput_shouldThrowException() {
+	    assertEquals(true,reg.validateInput.validateInput("Aditya","(^[A-Z]{1})[a-z]{2,}$"));
+	}
 }
